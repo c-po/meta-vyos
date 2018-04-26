@@ -2,6 +2,8 @@ SUMMARY = "The VyOS Router Image"
 
 IMAGE_INSTALL = " \
     packagegroup-core-boot \
+    packagegroup-vyos \
+    kernel-modules \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     "
 
@@ -14,11 +16,6 @@ inherit core-image
 IMAGE_ROOTFS_SIZE ?= "8192"
 
 IMAGE_FEATURES_append = " ssh-server-openssh"
-
-IMAGE_INSTALL_append = " \
-	kernel-modules \
-	packagegroup-vyos \
-	"
 
 # create home directory for vyos user
 python do_rootfs_append () {

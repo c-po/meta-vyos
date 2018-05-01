@@ -14,6 +14,7 @@ IMAGE_LINGUAS = " "
 
 inherit core-image
 
+IMAGE_FSTYPES += "squashfs"
 IMAGE_ROOTFS_SIZE ?= "8192"
 
 IMAGE_FEATURES_append = " ssh-server-openssh"

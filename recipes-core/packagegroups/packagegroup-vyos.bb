@@ -97,6 +97,13 @@ VYOS_SWUPDATE = " \
     swupdate-www \
     "
 
+VYOS_EMBEDDED = " \
+    "
+
+VYOS_NON_EMBEDDED = " \
+    vyos-op-non-embedded \
+    "
+
 RDEPENDS_${PN} = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'vyos-core', '${VYOS_CORE}', '',d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'vyos-config', '${VYOS_CONFIG}', '',d)} \
@@ -114,4 +121,6 @@ RDEPENDS_${PN} = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'vyos-redundancy', '${VYOS_REDUNDANCY}', '',d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'vyos-proxy', '${VYOS_PROXY}', '',d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'vyos-swupdate', '${VYOS_SWUPDATE}', '',d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'vyos-embedded', '${VYOS_EMBEDDED}', '',d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'vyos-non-embedded', '${VYOS_NON_EMBEDDED}', '',d)} \
     "
